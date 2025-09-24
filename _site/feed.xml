@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-24T15:20:38+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Victoria Shi</title><subtitle>BSc Neuroscience, MSc Biomedical Engineering
+</subtitle><author><name>Victoria Shi</name><email>your.email@example.com</email></author><entry><title type="html">Getting Started with Jekyll</title><link href="http://localhost:4000/blog/2024/01/15/getting-started-with-jekyll/" rel="alternate" type="text/html" title="Getting Started with Jekyll" /><published>2024-01-15T00:00:00+11:00</published><updated>2024-01-15T00:00:00+11:00</updated><id>http://localhost:4000/blog/2024/01/15/getting-started-with-jekyll</id><content type="html" xml:base="http://localhost:4000/blog/2024/01/15/getting-started-with-jekyll/"><![CDATA[<h1 id="getting-started-with-jekyll">Getting Started with Jekyll</h1>
+
+<p>Jekyll is a fantastic static site generator that’s perfect for blogs, documentation sites, and personal websites. In this post, I’ll walk you through the basics of getting started with Jekyll.</p>
+
+<h2 id="what-is-jekyll">What is Jekyll?</h2>
+
+<p>Jekyll is a static site generator written in Ruby. It takes your content written in Markdown, processes it through templates, and generates a complete static website that you can deploy anywhere.</p>
+
+<h2 id="why-choose-jekyll">Why Choose Jekyll?</h2>
+
+<ul>
+  <li><strong>Simple</strong>: Write in Markdown, Jekyll handles the rest</li>
+  <li><strong>Fast</strong>: Static sites load quickly</li>
+  <li><strong>Secure</strong>: No database or server-side code to worry about</li>
+  <li><strong>Free hosting</strong>: GitHub Pages supports Jekyll natively</li>
+  <li><strong>Version control</strong>: Your entire site is in Git</li>
+</ul>
+
+<h2 id="setting-up-your-first-jekyll-site">Setting Up Your First Jekyll Site</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ol>
+  <li>Install Ruby (version 2.5 or higher)</li>
+  <li>Install Jekyll and Bundler:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll bundler
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="create-a-new-site">Create a New Site</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new my-awesome-site
+<span class="nb">cd </span>my-awesome-site
+bundle <span class="nb">install
+</span>bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
+
+<p>Your site will be available at <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>.</p>
+
+<h2 id="basic-structure">Basic Structure</h2>
+
+<p>A typical Jekyll site has this structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my-awesome-site/
+├── _posts/          # Blog posts
+├── _layouts/        # HTML templates
+├── _includes/       # Reusable components
+├── _config.yml      # Site configuration
+├── assets/          # CSS, JS, images
+└── index.html       # Homepage
+</code></pre></div></div>
+
+<h2 id="writing-your-first-post">Writing Your First Post</h2>
+
+<p>Create a new file in <code class="language-plaintext highlighter-rouge">_posts/</code> with the format <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">First</span><span class="nv"> </span><span class="s">Post"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2024-01-15</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">general</span><span class="pi">]</span>
+<span class="nn">---</span>
+
+Your content goes here...
+</code></pre></div></div>
+
+<h2 id="customizing-your-site">Customizing Your Site</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">_config.yml</code> file controls your site’s settings:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> <span class="s">My Awesome Site</span>
+<span class="na">email</span><span class="pi">:</span> <span class="s">your-email@example.com</span>
+<span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+  <span class="s">Write an awesome description for your new site here.</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://your-domain.com"</span>
+</code></pre></div></div>
+
+<h2 id="themes">Themes</h2>
+
+<p>Jekyll has a great theme system. You can use existing themes or create your own. The Hyde theme (which this site uses) is a popular choice for personal blogs.</p>
+
+<h2 id="deployment">Deployment</h2>
+
+<p>The easiest way to deploy a Jekyll site is with GitHub Pages:</p>
+
+<ol>
+  <li>Push your site to a GitHub repository</li>
+  <li>Go to Settings &gt; Pages</li>
+  <li>Select your source branch</li>
+  <li>Your site will be available at <code class="language-plaintext highlighter-rouge">https://username.github.io/repository-name</code></li>
+</ol>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+  <li>Customize your theme</li>
+  <li>Add categories and tags</li>
+  <li>Set up a custom domain</li>
+  <li>Add analytics</li>
+  <li>Optimize for SEO</li>
+</ul>
+
+<p>Jekyll is a powerful tool that makes creating and maintaining a website simple and enjoyable. Whether you’re a developer looking to blog about your work or someone wanting to share their thoughts online, Jekyll provides a solid foundation.</p>
+
+<p>Happy blogging!</p>]]></content><author><name>Your Name</name></author><category term="jekyll" /><category term="web-development" /><summary type="html"><![CDATA[A beginner's guide to setting up a Jekyll blog and understanding its core concepts.]]></summary></entry></feed>

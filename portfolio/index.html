@@ -1,0 +1,85 @@
+---
+layout: default
+title: Portfolio
+---
+
+<div class="posts">
+  <h1>Portfolio</h1>
+  <p>If you're curious about what I actually did, here you go, plus my reflections.</p>
+
+  {% assign all_tags = '' | split: '' %}
+  {% for project in site.projects %}
+    {% if project.tags %}
+      {% for tag in project.tags %}
+        {% assign all_tags = all_tags | push: tag %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  {% assign unique_tags = all_tags | uniq | sort %}
+
+  <div class="portfolio-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    {% for tag in unique_tags %}
+      {% if tag and tag != '' %}
+        <button class="filter-btn" data-filter="{{ tag }}">{{ tag }}</button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% for project in site.projects %}
+    <div class="post project-card" data-tags="{% if project.tags %}{{ project.tags | join: ' ' }}{% endif %}">
+      <details class="project-details">
+        <summary>
+          <span class="project-summary-title">{{ project.title }}</span>
+          {% if project.tags %}
+            <span class="project-summary-tags">
+              {% for tag in project.tags %}
+                <span class="tag-badge">{{ tag }}</span>
+              {% endfor %}
+            </span>
+          {% endif %}
+          {% if project.excerpt %}
+            <span class="project-summary-excerpt">{{ project.excerpt | strip_html | truncate: 140 }}</span>
+          {% endif %}
+        </summary>
+
+        
+
+        {% if project.excerpt %}
+          <p>{{ project.excerpt }}</p>
+        {% endif %}
+
+        <div class="project-content">
+          {{ project.content | markdownify }}
+        </div>
+
+        {% if project.github and project.github != '' %}
+          <div class="project-links">
+            <a href="{{ project.github }}" target="_blank">View on GitHub</a>
+          </div>
+        {% endif %}
+      </details>
+    </div>
+  {% endfor %}
+
+  <script>
+  (function() {
+    var buttons = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.project-card');
+    function applyFilter(filter) {
+      cards.forEach(function(card) {
+        var tags = (card.getAttribute('data-tags') || '').split(' ').filter(Boolean);
+        var show = filter === 'all' || tags.indexOf(filter) !== -1;
+        card.style.display = show ? '' : 'none';
+      });
+    }
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        buttons.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        applyFilter(btn.getAttribute('data-filter'));
+      });
+    });
+  })();
+  </script>
+</div> 

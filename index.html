@@ -1,0 +1,45 @@
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+  <div class="post">
+    <h1 class="post-title">Hello!</h1>
+    <p>I'm an early career neuroscientist / biomedical engineer. This is my personal space to share my work, learnings, and even failures. Also my web development practice hall.</p>
+    
+    <p>Feel free to explore my <a href="/blog/">blog</a>, check out my <a href="/portfolio/">projects portfolio</a>, or view my <a href="/resume/">resume</a>.</p>
+  </div>
+
+  <h2>Recent Blog Posts</h2>
+  {% for post in site.posts limit:3 %}
+    <div class="post">
+      <h3 class="post-title">
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title }}
+        </a>
+      </h3>
+      <span class="post-date">{{ post.date | date_to_string }}</span>
+      {% if post.excerpt %}
+        {{ post.excerpt }}
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <h2>Featured Projects</h2>
+  {% for project in site.projects limit:3 %}
+    <div class="post">
+      <h3 class="post-title">
+        <a href="{{ project.url | relative_url }}">
+          {{ project.title }}
+        </a>
+      </h3>
+      {% if project.technologies %}
+        <span class="post-date">{{ project.technologies }}</span>
+      {% endif %}
+      {% if project.excerpt %}
+        {{ project.excerpt }}
+      {% endif %}
+    </div>
+  {% endfor %}
+</div> 

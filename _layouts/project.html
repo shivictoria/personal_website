@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="project">
+  <h1 class="project-title">{{ page.title }}</h1>
+  {% if page.date %}
+    <span class="project-date">{{ page.date | date_to_string }}</span>
+  {% endif %}
+  
+  {% if page.tags %}
+    <div class="project-tags">
+      {% for tag in page.tags %}
+        <span class="tag-badge">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if page.github and page.github != '' %}
+    <div class="project-links">
+      <a href="{{ page.github }}" target="_blank">View on GitHub</a>
+    </div>
+  {% endif %}
+  {{ content }}
+</div> 
