@@ -1,6 +1,6 @@
 ---
 title: Body Image Concerns on Chinese Social Media
-date: 2022-06-01
+date: 2021-09-01
 tags: [psychology, research, semantic analysis]
 excerpt: xxx
 ---
