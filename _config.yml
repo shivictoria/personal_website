@@ -16,8 +16,9 @@ author:
   linkedin: yuenvictoriashi
 
 # URL settings
-url: "https://shivictoria.github.io/personal_website/"
-baseurl: ""
+# For a project site at https://shivictoria.github.io/website
+url: "https://shivictoria.github.io"
+baseurl: "/personal_website"
 
 # Build settings
 markdown: kramdown
